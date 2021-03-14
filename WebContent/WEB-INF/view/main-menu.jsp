@@ -1,3 +1,4 @@
+<%@ taglib prefix="form" uri="http://www.springframework.org/tags/form" %>
 <!DOCTYPE html>
 
 <html>
@@ -24,6 +25,17 @@
 		Select File: <input type="file" name="file" /> <input type="submit"
 			value="Upload File" />
 	</form>
+
+
+	<form:form action="login" method="POST" modelAttribute="user">
+		<form:input type="text" path="id" />
+		<input type="submit" value="登入" />
+	</form:form>
+	<a href="logout">Log out</a><br>
+	
+	name: ${sessionScope.user.id}
+	status: ${sessionScope.user.id}
+	${message}
 	<!-- <img src="${pageContext.request.contextPath}/resources/images/p6.png"> -->
 </body>
 
