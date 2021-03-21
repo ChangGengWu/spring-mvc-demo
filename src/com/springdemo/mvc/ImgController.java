@@ -30,7 +30,7 @@ public class ImgController {
 			bout.write(barr);
 			bout.flush();
 			bout.close();
-			System.out.println(barr);
+			System.out.println(barr.length);
 			System.out.println(bout);
 			String encodedText = Base64Utils.encodeToString(barr);
 			System.out.println(encodedText);
