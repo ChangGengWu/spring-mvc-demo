@@ -1,6 +1,7 @@
 <%@ taglib prefix="form" uri="http://www.springframework.org/tags/form"%>
 <!DOCTYPE html>
-
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
 <html>
 <body>
 
@@ -35,6 +36,13 @@
 	<br> name: ${sessionScope.user.id} status: ${sessionScope.user.id}
 	${message}
 	<!-- <img src="${pageContext.request.contextPath}/resources/images/p6.png"> -->
+	
+	
+	<form action="redirectTest" mothod="POST">
+	<input type="submit">
+	</form>
+	
+	<input type="hidden" name="theReturn" id="theReturn" value="${theReturn}" />
 </body>
 <script type="text/javascript">
 function ValidateSize(file) {
@@ -48,6 +56,17 @@ function ValidateSize(file) {
 
         }
     }
-</script>   
+</script>
+<script charset = "UTF-8">
+$(document).ready(function(){
+	  var modelAttr = $("#theReturn").val();
+	  if(modelAttr == "1"){
+		  alert("delete");
+	  }
+	  else if(modelAttr == "2"){
+		  alert("update");
+	  }
+	})
+</script>
     
 </html>

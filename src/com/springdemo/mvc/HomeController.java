@@ -8,6 +8,7 @@ import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.ModelAttribute;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
+import org.springframework.web.servlet.mvc.support.RedirectAttributes;
 
 @Controller
 public class HomeController {
@@ -49,5 +50,13 @@ public class HomeController {
 		session.invalidate();
 		return "redirect:/";
 	}
+	
+	@RequestMapping("/redirectTest")
+	public String logout(HttpSession session,RedirectAttributes reA) {
+		System.out.println("redirectTest...");
+		reA.addFlashAttribute("theReturn","2");
+		return "redirect:/";
+	}
+
 
 }
